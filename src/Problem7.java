@@ -5,56 +5,24 @@ public class Problem7 extends SuperKarel {
     public void run() {
         fillRow();
         while (canGoUp()) {
-            fillFromLeftToRight();
+            fillFromRightToLeft();
 
             if (canGoUp()) {
-                fillFromRightToLeft();
+                fillFromLeftToRight();
             }
         }
     }
 
     private boolean canGoUp() {
-        if (facingEast()) {
-            return canGoUpFromRightEnd();
-        } else {
-            return canGoUpFromLeftEnd();
-        }
-    }
-
-    private boolean canGoUpFromRightEnd() {
-        turnLeft();
-        if (frontIsClear()) {
-            turnRight();
+        if (facingEast() && leftIsClear()) { // right end
             return true;
-        } else {
-            turnRight();
-            return false;
-        }
-    }
-
-    private boolean canGoUpFromLeftEnd() {
-        turnRight();
-        if (frontIsClear()) {
-            turnLeft();
+        } else if (facingWest() && rightIsClear()) { // left end
             return true;
-        } else {
-            turnLeft();
-            return false;
         }
+        return false;
     }
 
     private void fillFromLeftToRight() {
-        goUpFromRightEnd();
-        turnLeft();
-        fillRow();
-    }
-
-    private void goUpFromRightEnd() {
-        turnLeft();
-        move();
-    }
-
-    private void fillFromRightToLeft() {
         goUpFromLeftEnd();
         turnRight();
         fillRow();
@@ -62,6 +30,17 @@ public class Problem7 extends SuperKarel {
 
     private void goUpFromLeftEnd() {
         turnRight();
+        move();
+    }
+
+    private void fillFromRightToLeft() {
+        goUpRightEnd();
+        turnLeft();
+        fillRow();
+    }
+
+    private void goUpRightEnd() {
+        turnLeft();
         move();
     }
 
@@ -77,5 +56,4 @@ public class Problem7 extends SuperKarel {
             putBeeper();
         }
     }
-
 }
