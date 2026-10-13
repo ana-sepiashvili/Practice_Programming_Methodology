@@ -8,7 +8,22 @@ public class Problem14 extends GraphicsProgram {
     public void run() {
         drawFace();
         drawEyes();
-        //        drawMouth();
+        drawMouth();
+    }
+
+    private void drawMouth() {
+        int centerOfX = getWidth() / 2;
+        int centerOfY = getHeight() / 2;
+
+        double mouthWidth = 150;
+        double mouthHeight = 60;
+        double distanceFromY = 50;
+
+        GOval mouth = new GOval(mouthWidth, mouthHeight);
+        mouth.setFilled(true);
+        mouth.setColor(Color.blue);
+        mouth.setFillColor(Color.cyan);
+        add(mouth, centerOfX - mouthWidth / 2, centerOfY + distanceFromY);
     }
 
     private void drawEyes() {
