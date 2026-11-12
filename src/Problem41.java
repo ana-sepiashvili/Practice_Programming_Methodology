@@ -14,12 +14,9 @@ public class Problem41 extends GraphicsProgram {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        double x = e.getX();
-        double y = e.getY();
-
         GOval circle = new GOval(RADIUS * 2, RADIUS * 2);
         circle.setFilled(true);
         circle.setColor(rg.nextColor());
-        add(circle, x - RADIUS, y - RADIUS);
+        add(circle, e.getX() - RADIUS, e.getY() - RADIUS);
     }
 }

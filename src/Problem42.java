@@ -15,7 +15,8 @@ public class Problem42 extends GraphicsProgram {
         if (line == null) { // start of a line
             line = new GLine(e.getX(), e.getY(), e.getX(), e.getY());
             add(line);
-        } else { // end of a line
+        }
+        else { // end of a line
             line = null;
         }
     }

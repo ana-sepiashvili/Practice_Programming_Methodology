@@ -6,7 +6,7 @@ import java.awt.Color;
 public class Problem40 extends GraphicsProgram {
     private static final double BALL_DIAMETER = 50;
     private static final int SPEED = 1;
-    private static final int DELAY = 5;
+    private static final int DELAY = 2;
     private GOval ball; // instance variable
 
     public void run() {
