@@ -1,5 +1,8 @@
 import acm.program.ConsoleProgram;
 
+/**
+ * Midterm 2024
+ */
 public class Balance extends ConsoleProgram {
     public void run() {
         String numbers = readLine("Enter number: ");
