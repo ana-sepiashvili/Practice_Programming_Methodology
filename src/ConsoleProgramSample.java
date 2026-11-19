@@ -8,7 +8,7 @@ public class ConsoleProgramSample extends ConsoleProgram {
         //        char // character simbolo
         //        boolean // true / false
         //        String //teqsti
-
+        println(3 ^ 9);
 
     }
 }
